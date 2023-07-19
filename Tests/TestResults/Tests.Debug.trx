@@ -1,56 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TestRun id="9877010b-03f9-4199-a3a7-b3eccb9f991f" name="ricau@DESKTOP-KDTHGF0 2023-07-19 18:57:36" runUser="DESKTOP-KDTHGF0\ricau" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Times creation="2023-07-19T18:57:36.6429625-03:00" queuing="2023-07-19T18:57:36.6429629-03:00" start="2023-07-19T18:57:32.9651410-03:00" finish="2023-07-19T18:57:41.3299415-03:00" />
-  <TestSettings name="default" id="8cc4176b-5cb9-4354-937e-beed15a82572">
-    <Deployment runDeploymentRoot="ricau_DESKTOP-KDTHGF0_2023-07-19_18_57_36" />
+<TestRun id="65dc3c99-a2ac-4db5-b375-669d76d2a1e6" name="ricau@DESKTOP-KDTHGF0 2023-07-19 19:56:47" runUser="DESKTOP-KDTHGF0\ricau" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2023-07-19T19:56:47.3113526-03:00" queuing="2023-07-19T19:56:47.3113528-03:00" start="2023-07-19T19:56:43.5601132-03:00" finish="2023-07-19T19:56:52.0236217-03:00" />
+  <TestSettings name="default" id="d3de2142-fc8b-4169-97fb-1fa41942e75b">
+    <Deployment runDeploymentRoot="ricau_DESKTOP-KDTHGF0_2023-07-19_19_56_47" />
   </TestSettings>
   <Results>
-    <UnitTestResult executionId="66f89c58-2980-44e5-81d9-32c2078e0116" testId="c41f91ef-aacd-2999-0db6-c5d81b8a6931" testName="Test3" computerName="DESKTOP-KDTHGF0" duration="00:00:05.6910000" startTime="2023-07-19T18:57:35.0000000-03:00" endTime="2023-07-19T18:57:41.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66f89c58-2980-44e5-81d9-32c2078e0116" />
-    <UnitTestResult executionId="0ff8bc84-3e92-421b-acf4-481d9bea17ec" testId="0c6921cb-4213-6c52-4fbc-c52a3a99f135" testName="Test2(2)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T18:57:35.0000000-03:00" endTime="2023-07-19T18:57:35.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0ff8bc84-3e92-421b-acf4-481d9bea17ec">
-      <Output>
-        <StdOut>2</StdOut>
-      </Output>
-    </UnitTestResult>
-    <UnitTestResult executionId="db187ac7-41d7-4a96-a3f2-3f76073f523b" testId="aba80e67-eac8-76a4-2fcb-630e7738bee8" testName="Test2(1)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T18:57:35.0000000-03:00" endTime="2023-07-19T18:57:35.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db187ac7-41d7-4a96-a3f2-3f76073f523b">
-      <Output>
-        <StdOut>1</StdOut>
-      </Output>
-    </UnitTestResult>
-    <UnitTestResult executionId="4c0cd1a7-bcad-483e-818a-a8a42f689279" testId="219f2155-d86b-bba3-281d-158209b70f9e" testName="Test2(3)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T18:57:35.0000000-03:00" endTime="2023-07-19T18:57:35.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4c0cd1a7-bcad-483e-818a-a8a42f689279">
+    <UnitTestResult executionId="cd0461ae-5f7e-4530-b7f7-834fcb4021dd" testId="c41f91ef-aacd-2999-0db6-c5d81b8a6931" testName="Test3" computerName="DESKTOP-KDTHGF0" duration="00:00:05.6940000" startTime="2023-07-19T19:56:46.0000000-03:00" endTime="2023-07-19T19:56:51.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd0461ae-5f7e-4530-b7f7-834fcb4021dd" />
+    <UnitTestResult executionId="650fdd2e-01d6-44c5-9c5b-28c2ebc63f14" testId="219f2155-d86b-bba3-281d-158209b70f9e" testName="Test2(3)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T19:56:46.0000000-03:00" endTime="2023-07-19T19:56:46.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="650fdd2e-01d6-44c5-9c5b-28c2ebc63f14">
       <Output>
         <StdOut>3</StdOut>
       </Output>
     </UnitTestResult>
-    <UnitTestResult executionId="054d8349-2230-4c46-a058-28e6191d47c4" testId="c5fed7ea-c637-ee81-c85b-feb94ea19cf0" testName="Test1" computerName="DESKTOP-KDTHGF0" duration="00:00:01.3910000" startTime="2023-07-19T18:57:34.0000000-03:00" endTime="2023-07-19T18:57:35.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="054d8349-2230-4c46-a058-28e6191d47c4" />
+    <UnitTestResult executionId="1fbd427b-2aaf-4897-bcd1-32a0f4f9ec89" testId="0c6921cb-4213-6c52-4fbc-c52a3a99f135" testName="Test2(2)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T19:56:46.0000000-03:00" endTime="2023-07-19T19:56:46.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1fbd427b-2aaf-4897-bcd1-32a0f4f9ec89">
+      <Output>
+        <StdOut>2</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="641bb73b-0308-4dc7-8079-6ad0d519ec70" testId="c5fed7ea-c637-ee81-c85b-feb94ea19cf0" testName="Test1" computerName="DESKTOP-KDTHGF0" duration="00:00:01.4170000" startTime="2023-07-19T19:56:44.0000000-03:00" endTime="2023-07-19T19:56:46.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="641bb73b-0308-4dc7-8079-6ad0d519ec70" />
+    <UnitTestResult executionId="f37ff211-5b01-48b1-ab1b-6bb1bdd6c40d" testId="aba80e67-eac8-76a4-2fcb-630e7738bee8" testName="Test2(1)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T19:56:46.0000000-03:00" endTime="2023-07-19T19:56:46.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f37ff211-5b01-48b1-ab1b-6bb1bdd6c40d">
+      <Output>
+        <StdOut>1</StdOut>
+      </Output>
+    </UnitTestResult>
   </Results>
   <TestDefinitions>
     <UnitTest name="Test2(3)" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\debug\net45\tests.dll" id="219f2155-d86b-bba3-281d-158209b70f9e">
-      <Execution id="4c0cd1a7-bcad-483e-818a-a8a42f689279" />
+      <Execution id="650fdd2e-01d6-44c5-9c5b-28c2ebc63f14" />
       <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Debug\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test2(3)" />
     </UnitTest>
     <UnitTest name="Test1" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\debug\net45\tests.dll" id="c5fed7ea-c637-ee81-c85b-feb94ea19cf0">
-      <Execution id="054d8349-2230-4c46-a058-28e6191d47c4" />
+      <Execution id="641bb73b-0308-4dc7-8079-6ad0d519ec70" />
       <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Debug\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test1" />
     </UnitTest>
     <UnitTest name="Test2(2)" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\debug\net45\tests.dll" id="0c6921cb-4213-6c52-4fbc-c52a3a99f135">
-      <Execution id="0ff8bc84-3e92-421b-acf4-481d9bea17ec" />
+      <Execution id="1fbd427b-2aaf-4897-bcd1-32a0f4f9ec89" />
       <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Debug\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test2(2)" />
     </UnitTest>
     <UnitTest name="Test3" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\debug\net45\tests.dll" id="c41f91ef-aacd-2999-0db6-c5d81b8a6931">
-      <Execution id="66f89c58-2980-44e5-81d9-32c2078e0116" />
+      <Execution id="cd0461ae-5f7e-4530-b7f7-834fcb4021dd" />
       <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Debug\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test3" />
     </UnitTest>
     <UnitTest name="Test2(1)" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\debug\net45\tests.dll" id="aba80e67-eac8-76a4-2fcb-630e7738bee8">
-      <Execution id="db187ac7-41d7-4a96-a3f2-3f76073f523b" />
+      <Execution id="f37ff211-5b01-48b1-ab1b-6bb1bdd6c40d" />
       <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Debug\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test2(1)" />
     </UnitTest>
   </TestDefinitions>
   <TestEntries>
-    <TestEntry testId="c41f91ef-aacd-2999-0db6-c5d81b8a6931" executionId="66f89c58-2980-44e5-81d9-32c2078e0116" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="0c6921cb-4213-6c52-4fbc-c52a3a99f135" executionId="0ff8bc84-3e92-421b-acf4-481d9bea17ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="aba80e67-eac8-76a4-2fcb-630e7738bee8" executionId="db187ac7-41d7-4a96-a3f2-3f76073f523b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="219f2155-d86b-bba3-281d-158209b70f9e" executionId="4c0cd1a7-bcad-483e-818a-a8a42f689279" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="c5fed7ea-c637-ee81-c85b-feb94ea19cf0" executionId="054d8349-2230-4c46-a058-28e6191d47c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c41f91ef-aacd-2999-0db6-c5d81b8a6931" executionId="cd0461ae-5f7e-4530-b7f7-834fcb4021dd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="219f2155-d86b-bba3-281d-158209b70f9e" executionId="650fdd2e-01d6-44c5-9c5b-28c2ebc63f14" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c6921cb-4213-6c52-4fbc-c52a3a99f135" executionId="1fbd427b-2aaf-4897-bcd1-32a0f4f9ec89" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5fed7ea-c637-ee81-c85b-feb94ea19cf0" executionId="641bb73b-0308-4dc7-8079-6ad0d519ec70" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aba80e67-eac8-76a4-2fcb-630e7738bee8" executionId="f37ff211-5b01-48b1-ab1b-6bb1bdd6c40d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <TestLists>
     <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
