@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Threading;
 
 namespace Tests
 {
@@ -7,6 +8,7 @@ namespace Tests
         [Test]
         public void Test1()
         {
+            Thread.Sleep(1234);
             Assert.Pass();
         }
 
