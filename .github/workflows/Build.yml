@@ -50,10 +50,11 @@ jobs:
         id: test-results
         if: always()
         with:
-          report_individual_runs: 'true'
-          report_suite_logs: 'any'
-          deduplicate_classes_by_file_name: 'true'
-          time_unit: 'milliseconds'
+          report_individual_runs: true
+          report_suite_logs: any
+          deduplicate_classes_by_file_name: true
+          time_unit: milliseconds
+          ignore_runs: true
           check_name: 'Unit Tests Results'
           files: |
             **/*.trx
