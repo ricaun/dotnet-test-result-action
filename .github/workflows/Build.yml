@@ -31,7 +31,7 @@ jobs:
     needs: Build
     if: success() || failure()
     name: Tests
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     permissions:
       contents: read
@@ -57,4 +57,5 @@ jobs:
           ignore_runs: true
           check_name: 'Unit Tests Results'
           log_level: DEBUG
-          files: **/*.trx
+          files: |
+            **/*.trx
