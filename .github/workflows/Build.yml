@@ -1,0 +1,57 @@
+# ------------------------------------------------------------------------------
+# Build.yml
+# ------------------------------------------------------------------------------
+
+name: Build
+
+on:
+  push:
+  pull_request:
+    branches-ignore:
+      - master
+      - main
+  workflow_dispatch:
+
+jobs:
+  Build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Upload Artifact Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test Results
+          path: |
+            **/*.trx
+
+  Tests:
+    needs: Build
+    if: success() || failure()
+    name: Tests
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
+
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+          
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        id: test-results
+        if: always()
+        with:
+          report_individual_runs: 'true'
+          report_suite_logs: 'any'
+          deduplicate_classes_by_file_name: 'true'
+          files: |
+            **/*.trx
