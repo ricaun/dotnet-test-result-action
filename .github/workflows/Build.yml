@@ -46,12 +46,13 @@ jobs:
           path: artifacts
           
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2.7
+        uses: EnricoMi/publish-unit-test-result-action@v2
         id: test-results
         if: always()
         with:
           report_individual_runs: 'true'
           report_suite_logs: 'any'
           deduplicate_classes_by_file_name: 'true'
+          check_name: 'Unit Tests Results'
           files: |
             **/*.trx
