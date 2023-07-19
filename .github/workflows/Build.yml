@@ -46,7 +46,7 @@ jobs:
           path: artifacts
           
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: EnricoMi/publish-unit-test-result-action@v2.7
         id: test-results
         if: always()
         with:
