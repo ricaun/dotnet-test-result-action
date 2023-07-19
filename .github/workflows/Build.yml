@@ -46,7 +46,7 @@ jobs:
           path: artifacts
           
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
         id: test-results
         if: always()
         with:
@@ -56,5 +56,5 @@ jobs:
           time_unit: milliseconds
           ignore_runs: true
           check_name: 'Unit Tests Results'
-          files: |
-            **/*.trx
+          log_level: DEBUG
+          files: **/*.trx
