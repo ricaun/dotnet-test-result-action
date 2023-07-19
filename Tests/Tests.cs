@@ -19,5 +19,12 @@ namespace Tests
         {
             System.Console.WriteLine(number);
         }
+
+        [Test]
+        public void Test3()
+        {
+            Thread.Sleep(5678);
+            Assert.Pass();
+        }
     }
 }
