@@ -56,4 +56,4 @@ jobs:
           time_unit: "milliseconds"
           ignore_runs: true
           check_name: 'Unit Tests Results'
-          log_level: DEBUG
+          #log_level: DEBUG
