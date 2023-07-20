@@ -54,6 +54,15 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                 ("xn", "http://microsoft.com/schemas/VisualStudio/TeamTest/2010"));
 
         var resultFiles = TestResultDirectory.GlobFiles("**\\*.trx");
+
+        if (resultFiles.Any())
+        {
+            GitHubSummaryWriteLine(
+                $"|   | Test File | Passed | Failed | Skipped |",
+                $"| - | --------- | ------ | ------ | ------- |"
+            );
+        }
+
         foreach (var resultFile in resultFiles)
         {
             var outcomes = GetOutcomes(resultFile).ToList();
@@ -64,10 +73,7 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
             var resultIcon = (failedTests == 0) ? ":heavy_check_mark:" : ":x:";
 
             GitHubSummaryWriteLine(
-                $"#### {resultIcon} `{resultFile.Name}`",
-                $"| Passed | Failed | Skipped |",
-                $"| ------ | ------ | ------- |",
-                $"| {passedTests} | {failedTests} | {skippedTests} |"
+                $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} |"
                 );
         }
     }

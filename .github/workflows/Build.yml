@@ -32,29 +32,29 @@ jobs:
           path: |
             **/*.trx
 
-  Tests:
-    needs: Build
-    if: success() || failure()
-    name: Tests
-    runs-on: windows-latest
+  #Tests:
+  #  needs: Build
+  #  if: success() || failure()
+  #  name: Tests
+  #  runs-on: windows-latest
 
-    permissions:
-      checks: write
-      pull-requests: write
+  #  permissions:
+  #    checks: write
+  #    pull-requests: write
 
-    steps:
-      - name: Download Artifacts
-        uses: actions/download-artifact@v3
-        with:
-          path: artifacts
+  #  steps:
+  #    - name: Download Artifacts
+  #      uses: actions/download-artifact@v3
+  #      with:
+  #        path: artifacts
           
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v2
-        id: test-results
-        if: always()
-        with:
-          files: |
-            **/*.trx
+  #    - name: Publish Test Results
+  #      uses: EnricoMi/publish-unit-test-result-action/composite@v2
+  #      id: test-results
+  #      if: always()
+  #      with:
+  #        files: |
+  #          **/*.trx
           #report_individual_runs: true
           #report_suite_logs: "any"
           #deduplicate_classes_by_file_name: true
