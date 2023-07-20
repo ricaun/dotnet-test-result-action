@@ -67,20 +67,24 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                 $"|   | Test File | Passed | Failed | Skipped |",
                 $"| - | --------- | ------ | ------ | ------- |"
             );
-        }
 
-        foreach (var resultFile in resultFiles)
-        {
-            var outcomes = GetOutcomes(resultFile).ToList();
-            var passedTests = outcomes.Count(x => x == "Passed");
-            var failedTests = outcomes.Count(x => x == "Failed");
-            var skippedTests = outcomes.Count(x => x == "NotExecuted");
+            foreach (var resultFile in resultFiles)
+            {
+                var outcomes = GetOutcomes(resultFile).ToList();
+                var passedTests = outcomes.Count(x => x == "Passed");
+                var failedTests = outcomes.Count(x => x == "Failed");
+                var skippedTests = outcomes.Count(x => x == "NotExecuted");
 
-            var resultIcon = (failedTests == 0) ? ":heavy_check_mark:" : ":x:";
+                var resultIcon = (failedTests == 0) ? ":heavy_check_mark:" : ":x:";
+
+                GitHubSummaryWriteLine(
+                    $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} |"
+                );
+            }
 
             GitHubSummaryWriteLine(
-                $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} |"
-                );
+                ""
+            );
         }
     }
 
@@ -105,10 +109,9 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
 
         foreach (var resultFile in resultFiles)
         {
-            //Serilog.Log.Information($"{resultFile.Name}");
-
             GitHubSummaryWriteLine(
-                $"#### {resultFile.Name}"
+                $"|   | {resultFile.Name} | Time | Message |",
+                $"| - | -------- | ---- | ------- |"
             );
 
             var testResults = GetTestResultElements(resultFile)
@@ -126,20 +129,40 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                     : testResult.Outcome.Contains("NotExecuted") ? ":warning:" : ":x:";
 
                 GitHubSummaryWriteLine(
-                    $"##### {testResultIcon} \t {testResult.TestName} \t {totalSeconds:0.00}s"
+                    $"| {testResultIcon} | {testResult.TestName} | {totalSeconds:0.00}s | {message.Replace("\r", "").Replace("\n", "<br>")}"
                 );
-
-                if (!string.IsNullOrWhiteSpace(message))
-                {
-                    GitHubSummaryWriteLine(
-                        $"```",
-                        $"{message}",
-                        $"```"
-                    );
-                }
-
-                //Serilog.Log.Information($"{testResult.TestName} {testResult.Outcome} {totalSeconds:0.00} | {message}");
             }
+
+            GitHubSummaryWriteLine(
+                ""
+            );
+
+            if (false)
+                foreach (var testResult in testResults)
+                {
+                    var totalSeconds = (testResult.EndTime - testResult.StartTime).TotalSeconds;
+                    var message = $"{testResult.Output?.StdOut}\n{testResult.Output?.StdErr}\n{testResult.Output?.ErrorInfo?.Message}\n{testResult.Output?.ErrorInfo?.StackTrace}";
+                    message = message.Trim();
+
+                    var testResultIcon = testResult.Outcome.Contains("Passed")
+                        ? ":heavy_check_mark:"
+                        : testResult.Outcome.Contains("NotExecuted") ? ":warning:" : ":x:";
+
+                    GitHubSummaryWriteLine(
+                        $"##### {testResultIcon} \t {testResult.TestName} \t {totalSeconds:0.00}s"
+                    );
+
+                    if (!string.IsNullOrWhiteSpace(message))
+                    {
+                        GitHubSummaryWriteLine(
+                            $"```",
+                            $"{message}",
+                            $"```"
+                        );
+                    }
+
+                    //Serilog.Log.Information($"{testResult.TestName} {testResult.Outcome} {totalSeconds:0.00} | {message}");
+                }
 
 
         }
