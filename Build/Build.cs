@@ -118,10 +118,12 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                 testResults.Any(e => e.Outcome.Contains("NotExecuted")) ? ":warning:" :
                 ":heavy_check_mark:";
 
+            var open = testResultIconTitle.Contains(":x:") ? "open" : "";
+
             GitHubSummaryWriteLine(
-                "<details>", "",
-                "<summary>", "",
-                $"### {testResultIconTitle} {resultFile.Name}", "",
+                $"<details {open}>",
+                "<summary>",
+                $"{testResultIconTitle} {resultFile.Name}",
                 "</summary>", ""
             );
 
