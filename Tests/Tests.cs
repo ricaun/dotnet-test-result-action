@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Threading;
 
 namespace Tests
@@ -25,6 +26,16 @@ namespace Tests
         {
             Thread.Sleep(5678);
             Assert.Pass();
+        }
+
+        [Test]
+        public void TestDuration()
+        {
+            var duration = "00:00:05.6940000";
+            var dateTime = DateTime.Parse(duration);
+            Console.WriteLine(dateTime);
+            var timeStan = TimeSpan.Parse(duration);
+            Console.WriteLine(timeStan);
         }
     }
 }

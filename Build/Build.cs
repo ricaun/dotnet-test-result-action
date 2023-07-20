@@ -71,6 +71,13 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                 "/xn:TestRun/xn:Results/xn:UnitTestResult/@endTime",
                 ("xn", "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")).Select(DateTime.Parse);
 
+        IEnumerable<TimeSpan> GetDurations(AbsolutePath file)
+            => XmlTasks.XmlPeek(
+                file,
+                "/xn:TestRun/xn:Results/xn:UnitTestResult/@duration",
+                ("xn", "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")).Select(TimeSpan.Parse);
+
+
         var resultFiles = TestResultDirectory.GlobFiles("**\\*.trx");
 
         if (resultFiles.Any())
@@ -87,6 +94,7 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                 var failedTests = outcomes.Count(x => x == "Failed");
                 var skippedTests = outcomes.Count(x => x == "NotExecuted");
 
+                var duration = GetDurations(resultFile).Select(e => e.TotalSeconds).Sum();
                 var startTime = GetStartTimes(resultFile).Min(x => x);
                 var endTime = GetEndTimes(resultFile).Max(x => x);
                 var time = (endTime - startTime).TotalSeconds;
@@ -97,7 +105,7 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                     ":heavy_check_mark:";
 
                 GitHubSummaryWriteLine(
-                    $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} | {time:0.00}s |"
+                    $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} | {duration:0.00}s |"
                 );
             }
 
@@ -154,7 +162,9 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
 
             foreach (var testResult in testResults)
             {
-                var totalSeconds = (testResult.EndTime - testResult.StartTime).TotalSeconds;
+                //var totalSeconds = (testResult.EndTime - testResult.StartTime).TotalSeconds;
+                var totalSeconds = TimeSpan.Parse(testResult.Duration).TotalSeconds;
+
                 var message = $"{testResult.Output?.StdOut}\n{testResult.Output?.StdErr}\n{testResult.Output?.ErrorInfo?.Message}\n{testResult.Output?.ErrorInfo?.StackTrace}";
                 message = message.Trim();
 
