@@ -24,13 +24,13 @@ jobs:
         env:
           GitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload Artifact Test Results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: Test Results
-          path: |
-            **/*.trx
+      #- name: Upload Artifact Test Results
+      #  if: always()
+      #  uses: actions/upload-artifact@v3
+      #  with:
+      #    name: Test Results
+      #    path: |
+      #      **/*.trx
 
   #Tests:
   #  needs: Build
