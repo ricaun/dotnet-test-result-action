@@ -64,7 +64,7 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
             var resultIcon = (failedTests == 0) ? ":heavy_check_mark:" : ":x:";
 
             GitHubSummaryWriteLine(
-                $"### {resultIcon} Tests `{resultFile.Name}`",
+                $"#### {resultIcon} `{resultFile.Name}`",
                 $"| Passed | Failed | Skipped |",
                 $"| ------ | ------ | ------- |",
                 $"| {passedTests} | {failedTests} | {skippedTests} |"
