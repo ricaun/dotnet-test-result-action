@@ -111,7 +111,7 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
         {
             GitHubSummaryWriteLine(
                 $"|   | {resultFile.Name} | Time | Message |",
-                $"| - | -------- | ---- | ------- |"
+                $"| :-: | :--------: | :----: | ------- |"
             );
 
             var testResults = GetTestResultElements(resultFile)
