@@ -6,6 +6,10 @@
 
 Example of a GitHub Actions workflow for building and testing a .NET Framework project.
 
+## Nuke
+
+Using [Nuke](https://github.com/nuke-build/nuke/commit/04f2c8bd37d73db72d3a2b629c2b7ec14670b8d6) to generate the summary of the tests in the solution.
+
 ## Actions References
 
 - [upload-artifact](https://github.com/actions/upload-artifact)
