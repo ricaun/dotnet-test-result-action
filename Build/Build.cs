@@ -59,13 +59,25 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                 "/xn:TestRun/xn:Results/xn:UnitTestResult/@outcome",
                 ("xn", "http://microsoft.com/schemas/VisualStudio/TeamTest/2010"));
 
+        IEnumerable<DateTime> GetStartTimes(AbsolutePath file)
+            => XmlTasks.XmlPeek(
+                file,
+                "/xn:TestRun/xn:Results/xn:UnitTestResult/@startTime",
+                ("xn", "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")).Select(DateTime.Parse);
+
+        IEnumerable<DateTime> GetEndTimes(AbsolutePath file)
+            => XmlTasks.XmlPeek(
+                file,
+                "/xn:TestRun/xn:Results/xn:UnitTestResult/@endTime",
+                ("xn", "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")).Select(DateTime.Parse);
+
         var resultFiles = TestResultDirectory.GlobFiles("**\\*.trx");
 
         if (resultFiles.Any())
         {
             GitHubSummaryWriteLine(
-                $"|   | Test File | Passed | Failed | Skipped |",
-                $"| - | --------- | ------ | ------ | ------- |"
+                $"|   | Test File | Passed | Failed | Skipped | Time |",
+                $"| :-: | --------- | :------: | :------: | :-------: | :----: |"
             );
 
             foreach (var resultFile in resultFiles)
@@ -75,10 +87,17 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                 var failedTests = outcomes.Count(x => x == "Failed");
                 var skippedTests = outcomes.Count(x => x == "NotExecuted");
 
-                var resultIcon = (failedTests == 0) ? ":heavy_check_mark:" : ":x:";
+                var startTime = GetStartTimes(resultFile).Min(x => x);
+                var endTime = GetEndTimes(resultFile).Max(x => x);
+                var time = (endTime - startTime).TotalSeconds;
+
+                var resultIcon =
+                    (failedTests != 0) ? ":x:" :
+                    (skippedTests != 0) ? ":warning:" :
+                    ":heavy_check_mark:";
 
                 GitHubSummaryWriteLine(
-                    $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} |"
+                    $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} | {time:0.00}s |"
                 );
             }
 
