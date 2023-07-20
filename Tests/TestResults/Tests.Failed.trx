@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2cee3491-041f-4498-9404-443dd2fd0d32" name="ricau@DESKTOP-KDTHGF0 2023-07-19 21:29:01" runUser="DESKTOP-KDTHGF0\ricau" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2023-07-19T21:29:01.0486399-03:00" queuing="2023-07-19T21:29:01.0486401-03:00" start="2023-07-19T21:28:57.2412131-03:00" finish="2023-07-19T21:29:05.7291399-03:00" />
+  <TestSettings name="default" id="f1826e8c-9d3c-495e-8242-018887ac7e43">
+    <Deployment runDeploymentRoot="ricau_DESKTOP-KDTHGF0_2023-07-19_21_29_01" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="b019e978-c035-4b61-b09b-beaef6c221e3" testId="c41f91ef-aacd-2999-0db6-c5d81b8a6931" testName="Test3" computerName="DESKTOP-KDTHGF0" duration="00:00:05.6850000" startTime="2023-07-19T21:28:59.0000000-03:00" endTime="2023-07-19T21:29:05.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b019e978-c035-4b61-b09b-beaef6c221e3">
+      <Output>
+        <ErrorInfo>
+          <StackTrace>   at Tests.Tests.Test3() in D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\Tests.cs:line 28&#xD;
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c2f4c2f9-1185-4887-91fc-5d4577ed25e9" testId="0c6921cb-4213-6c52-4fbc-c52a3a99f135" testName="Test2(2)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T21:28:59.0000000-03:00" endTime="2023-07-19T21:28:59.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c2f4c2f9-1185-4887-91fc-5d4577ed25e9">
+      <Output>
+        <StdOut>2</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="66c64bb8-81e8-46d7-a6e8-3e00a938e928" testId="c5fed7ea-c637-ee81-c85b-feb94ea19cf0" testName="Test1" computerName="DESKTOP-KDTHGF0" duration="00:00:01.4410000" startTime="2023-07-19T21:28:58.0000000-03:00" endTime="2023-07-19T21:28:59.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66c64bb8-81e8-46d7-a6e8-3e00a938e928">
+      <Output>
+        <ErrorInfo>
+          <StackTrace>   at Tests.Tests.Test1() in D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\Tests.cs:line 13&#xD;
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="893d180d-9c89-4d7b-b54c-f3541b0bd011" testId="219f2155-d86b-bba3-281d-158209b70f9e" testName="Test2(3)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T21:28:59.0000000-03:00" endTime="2023-07-19T21:28:59.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="893d180d-9c89-4d7b-b54c-f3541b0bd011">
+      <Output>
+        <StdOut>3</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ff48c41b-ee89-41fe-b43f-c57b8d12b936" testId="aba80e67-eac8-76a4-2fcb-630e7738bee8" testName="Test2(1)" computerName="DESKTOP-KDTHGF0" duration="00:00:00.0000001" startTime="2023-07-19T21:28:59.0000000-03:00" endTime="2023-07-19T21:28:59.0000000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ff48c41b-ee89-41fe-b43f-c57b8d12b936">
+      <Output>
+        <StdOut>1</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Test2(3)" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\release\net45\tests.dll" id="219f2155-d86b-bba3-281d-158209b70f9e">
+      <Execution id="893d180d-9c89-4d7b-b54c-f3541b0bd011" />
+      <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Release\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test2(3)" />
+    </UnitTest>
+    <UnitTest name="Test1" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\release\net45\tests.dll" id="c5fed7ea-c637-ee81-c85b-feb94ea19cf0">
+      <Execution id="66c64bb8-81e8-46d7-a6e8-3e00a938e928" />
+      <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Release\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test1" />
+    </UnitTest>
+    <UnitTest name="Test2(2)" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\release\net45\tests.dll" id="0c6921cb-4213-6c52-4fbc-c52a3a99f135">
+      <Execution id="c2f4c2f9-1185-4887-91fc-5d4577ed25e9" />
+      <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Release\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test2(2)" />
+    </UnitTest>
+    <UnitTest name="Test3" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\release\net45\tests.dll" id="c41f91ef-aacd-2999-0db6-c5d81b8a6931">
+      <Execution id="b019e978-c035-4b61-b09b-beaef6c221e3" />
+      <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Release\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test3" />
+    </UnitTest>
+    <UnitTest name="Test2(1)" storage="d:\users\ricau\source\repos\dotnet-test-result-action\tests\bin\release\net45\tests.dll" id="aba80e67-eac8-76a4-2fcb-630e7738bee8">
+      <Execution id="ff48c41b-ee89-41fe-b43f-c57b8d12b936" />
+      <TestMethod codeBase="D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Release\net45\Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Tests.Tests" name="Test2(1)" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="c41f91ef-aacd-2999-0db6-c5d81b8a6931" executionId="b019e978-c035-4b61-b09b-beaef6c221e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c6921cb-4213-6c52-4fbc-c52a3a99f135" executionId="c2f4c2f9-1185-4887-91fc-5d4577ed25e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5fed7ea-c637-ee81-c85b-feb94ea19cf0" executionId="66c64bb8-81e8-46d7-a6e8-3e00a938e928" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="219f2155-d86b-bba3-281d-158209b70f9e" executionId="893d180d-9c89-4d7b-b54c-f3541b0bd011" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aba80e67-eac8-76a4-2fcb-630e7738bee8" executionId="ff48c41b-ee89-41fe-b43f-c57b8d12b936" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="5" executed="5" passed="3" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 3.16.1.0: Test execution started&#xD;
+Running all tests in D:\Users\ricau\source\repos\dotnet-test-result-action\Tests\bin\Release\net45\Tests.dll&#xD;
+   NUnit3TestExecutor converted 5 of 5 NUnit test cases&#xD;
+NUnit Adapter 3.16.1.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
