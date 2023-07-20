@@ -108,8 +108,7 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
             //Serilog.Log.Information($"{resultFile.Name}");
 
             GitHubSummaryWriteLine(
-                $"#### {resultFile.Name}",
-                $"```"
+                $"#### {resultFile.Name}"
             );
 
             var testResults = GetTestResultElements(resultFile)
@@ -119,23 +118,32 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
             foreach (var testResult in testResults)
             {
                 var totalSeconds = (testResult.EndTime - testResult.StartTime).TotalSeconds;
-                var message = $"{testResult.Output?.StdOut} {testResult.Output?.StdErr} {testResult.Output?.ErrorInfo?.Message} {testResult.Output?.ErrorInfo?.StackTrace}";
+                var message = $"{testResult.Output?.StdOut}\n{testResult.Output?.StdErr}\n{testResult.Output?.ErrorInfo?.Message}\n{testResult.Output?.ErrorInfo?.StackTrace}";
                 message = message.Trim();
 
+                var testResultIcon = testResult.Outcome.Contains("Passed")
+                    ? ":heavy_check_mark:"
+                    : testResult.Outcome.Contains("NotExecuted") ? ":warning:" : ":x:";
+
                 GitHubSummaryWriteLine(
-                    $"{testResult.Outcome} \t {testResult.TestName} \t {totalSeconds} | {message}"
+                    $"##### {testResultIcon} \t {testResult.TestName} \t {totalSeconds:0.00}s"
                 );
+
+                if (!string.IsNullOrWhiteSpace(message))
+                {
+                    GitHubSummaryWriteLine(
+                        $"```",
+                        $"{message}",
+                        $"```"
+                    );
+                }
 
                 //Serilog.Log.Information($"{testResult.TestName} {testResult.Outcome} {totalSeconds:0.00} | {message}");
             }
 
-            GitHubSummaryWriteLine(
-                $"```"
-            );
+
         }
     }
-
-
 }
 
 [XmlRoot("UnitTestResult", Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
