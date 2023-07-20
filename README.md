@@ -1,6 +1,7 @@
 # dotnet-test-result-action
 
 [![Visual Studio 2022](https://img.shields.io/badge/Visual%20Studio-2022-blue)](../..)
+[![Nuke](https://img.shields.io/badge/Nuke-Build-blue)](https://nuke.build/)
 [![Build](../../actions/workflows/Build.yml/badge.svg)](../../actions)
 
 Example of a GitHub Actions workflow for building and testing a .NET Framework project.

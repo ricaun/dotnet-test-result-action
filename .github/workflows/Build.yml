@@ -19,6 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Run './build/build.cmd'
+        run: ./build/build.cmd --root ./build
+        env:
+          GitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload Artifact Test Results
         if: always()
         uses: actions/upload-artifact@v3
