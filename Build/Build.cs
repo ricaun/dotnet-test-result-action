@@ -83,8 +83,8 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
         if (resultFiles.Any())
         {
             GitHubSummaryWriteLine(
-                $"|   | Test File | Passed | Failed | Skipped | Time |",
-                $"| :-: | --------- | :------: | :------: | :-------: | :----: |"
+                $"|   | Test File | Passed | Failed | Skipped | Total | Time |",
+                $"| :-: | --------- | :------: | :------: | :-------: | :-----: | :----: |"
             );
 
             foreach (var resultFile in resultFiles)
@@ -105,7 +105,7 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
                     ":heavy_check_mark:";
 
                 GitHubSummaryWriteLine(
-                    $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} | {duration:0.00}s |"
+                    $"| {resultIcon} | {resultFile.Name} | {passedTests} | {failedTests} | {skippedTests} | {outcomes.Count} | {duration:0.00}s |"
                 );
             }
 
