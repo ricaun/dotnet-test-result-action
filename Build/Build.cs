@@ -109,14 +109,27 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
 
         foreach (var resultFile in resultFiles)
         {
-            GitHubSummaryWriteLine(
-                $"|   | {resultFile.Name} | Time | Message |",
-                $"| :-: | :--------: | :----: | ------- |"
-            );
-
             var testResults = GetTestResultElements(resultFile)
                 .Select(DeserializeXml<UnitTestResult>)
                 .OrderBy(e => e.TestName);
+
+            var testResultIconTitle =
+                testResults.Any(e => e.Outcome.Contains("Failed")) ? ":x:" :
+                testResults.Any(e => e.Outcome.Contains("NotExecuted")) ? ":warning:" :
+                ":heavy_check_mark:";
+
+            GitHubSummaryWriteLine(
+                "<details>", "",
+                "<summary>", "",
+                $"### {testResultIconTitle} {resultFile.Name}", "",
+                "</summary>", ""
+            );
+
+            GitHubSummaryWriteLine(
+                $"|   | TestName | Time | Message |",
+                $"| :-: | :--------: | :----: | ------- |"
+            );
+
 
             foreach (var testResult in testResults)
             {
@@ -135,6 +148,10 @@ public interface ITestReport : IHazIGitHubActions, IHazSolution
 
             GitHubSummaryWriteLine(
                 ""
+            );
+
+            GitHubSummaryWriteLine(
+                "</details>", ""
             );
 
             if (false)
